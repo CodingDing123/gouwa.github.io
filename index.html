@@ -7,19 +7,28 @@
 	</head>
 	<script>
 	setInterval(function(){document.getElementById("firstgw").src="./gw/original.png";},5000);
+	setInterval(function(){document.getElementById("bread").src="./gw/bread.png";isEatBread=false},10000);
 	touchtimes = 0;
+	isEatBread = false;
 	function addtimes() {
 		touchtimes += 1;
-		if(touchtimes > 3) {
+		if(touchtimes > 3 && !isEatBread) {
 			document.getElementById("firstgw").src="./gw/angry.png";
+			touchtimes = 0;
 		}
+	}
+	function eatbread() {
+		isEatBread = true;
+		document.getElementById("bread").src="./gw/404.png";
 	}
 	</script>
 	<body>
 		<h1 id="title1">狗蛙世界</h1>
 		<p id="designer">dinghx制作该网站</p>
 		<br>
+		<img id="bread" src="./gw/bread.png" alt="面包吃完了。。。" onclick="eatbread()">
 		<img id="firstgw" src="./gw/original.png" alt="狗蛙走丢了。。。" onclick="addtimes()">
+		<button onclick="alert('吃下面包抚摸狗蛙时狗蛙不再生气')">面包是干什么的？</button>
 		<h3>摸摸它</h3>
 	</body>
 </html>
