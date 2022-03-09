@@ -5,9 +5,20 @@
 		<link rel="stylesheet" type="text/css" href="indexpage.css">
 		<title>狗蛙世界</title>
 	</head>
+	<script>
+	touchtimes = 0;
+	function addtimes() {
+		touchtimes += 1;
+		if(touchtimes > 3) {
+			document.getElementById("firstgw").src="./gw/angry.png";
+		}
+	}
+	</script>
 	<body>
 		<h1 id="title1">狗蛙世界</h1>
 		<p id="designer">dinghx制作该网站</p>
-		
+		<br>
+		<img id="firstgw" src="./gw/original.png" alt="狗蛙走丢了。。。" onclick="addtimes()">
+		<p>摸摸它</p>
 	</body>
 </html>
