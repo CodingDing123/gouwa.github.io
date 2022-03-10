@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-		<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="indexpage.css">
 		<title>狗蛙世界</title>
 	</head>
@@ -31,12 +31,14 @@
 		<a id="visitgithub" href="https://github.com/CodingDing123/gouwa.github.io/tree/master">访问GitHub页</a>
 		<br>
 		<img id="bread" src="./gw/bread.png" alt="面包吃完了。。。" onclick="eatbread()">
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">面包是干什么的？</button>
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			面包是干什么的？
+		</button>
 		<br>
 		<img id="firstgw" src="./gw/original.png" alt="狗蛙走丢了。。。" onclick="addtimes()">
 		<br>
 		<h3>摸摸它</h3>
-		
+
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -45,19 +47,19 @@
 							&times;
 						</button>
 						<h4 class="modal-title" id="myModalLabel">
-							模态框（Modal）标题
+							狗勾面包
 						</h4>
 					</div>
 					<div class="modal-body">
-						在这里添加一些文本
+						吃下面包后，可以在下次刷新出来前安抚任何犬类，每十秒刷新一次。
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							明白了
 						</button>
 					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal -->
+				</div>
+			</div>
 		</div>
-		
 	</body>
 </html>
