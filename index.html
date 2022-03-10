@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<script src=jquery.js"></script>
-		<script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="indexpage.css">
 		<title>狗蛙世界</title>
 	</head>
@@ -28,10 +28,36 @@
 	<body>
 		<h1 id="title1">狗蛙世界</h1>
 		<p id="designer">dinghx制作该网站</p>
+		<a id="visitgithub" href="https://github.com/CodingDing123/gouwa.github.io/tree/master">访问GitHub页</a>
 		<br>
 		<img id="bread" src="./gw/bread.png" alt="面包吃完了。。。" onclick="eatbread()">
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">面包是干什么的？</button>
+		<br>
 		<img id="firstgw" src="./gw/original.png" alt="狗蛙走丢了。。。" onclick="addtimes()">
-		<button type="button" class="btn btn-primary btn-lg" onclick="alert('吃下面包抚摸狗蛙时狗蛙不再生气')">面包是干什么的？</button>
+		<br>
 		<h3>摸摸它</h3>
+		
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							模态框（Modal）标题
+						</h4>
+					</div>
+					<div class="modal-body">
+						在这里添加一些文本
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+		
 	</body>
 </html>
