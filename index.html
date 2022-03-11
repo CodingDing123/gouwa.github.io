@@ -11,6 +11,7 @@
 	<script>
 	touchtimes = 0;
 	isEatBread = false;
+	text = "";
 	setInterval(function(){document.getElementById("firstgw").src="./gw/original.png";},5000);
 	setInterval(function(){document.getElementById("bread").src="./gw/bread.png";isEatBread=false;touchtimes=0},10000);
 	function addtimes() {
@@ -34,7 +35,9 @@
 		} else if (x.value == '') {
 			document.getElementById("answerplace").innerHTML='<div class="alert alert-warning">你说什么？</div>';
 		} else {
-			document.getElementById("answerplace").innerHTML='<div class="alert alert-info">狗蛙也不知道呢</div>';
+			text = x.value;
+			text = text.replace("？","。").replace("吗","").replace("你","我").replace("什么","好吃的");
+			document.getElementById("answerplace").innerHTML='<div class="alert alert-info">'+text+'</div>';
 		}
 	}
 	</script>
