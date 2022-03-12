@@ -38,6 +38,9 @@
 			if (x.value == 'zcz and lcx' || x.value == 'lcx and zcz') {
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-success">新婚快乐！！！</div>';
 				document.getElementById("firstgw").src = "./gw/girl.png";
+			} else if (x.value == '皮皮') {
+				document.getElementById("answerplace").innerHTML = '<div class="alert alert-success">祝皮皮生日快乐！</div>';
+				document.getElementById("firstgw").src = "./gw/IMG_3848.PNG";
 			} else if (x.value == 'dhx and zyd' || x.value == 'zyd and dhx') {
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-danger">你在想什么？？？</div>';
 				document.getElementById("firstgw").src = "./gw/angry.png";
@@ -55,6 +58,7 @@
 		<div id="welcome">
 			<h1 id="title1">狗蛙世界</h1>
 			<p id="designer">dinghx制作该网站</p>
+			<h2>皮皮生日快乐</h2>
 			<a id="visitgithub" href="https://github.com/CodingDing123/gouwa.github.io/tree/master">访问GitHub页</a>
 			<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#notice">
 				公告
@@ -110,6 +114,7 @@
 			<h2>试着问问:</h2>
 			<p>狗蛙你喜欢吃什么？</p>
 			<p>狗蛙今天天气怎么样？</p>
+			<p>皮皮</p>
 		</div>
 
 		<!-- 公告模态框 -->
@@ -125,6 +130,8 @@
 
 					<!-- 模态框内容 -->
 					<div class="modal-body">
+						<h5>3.12特别更新</h5>
+						<p>皮皮生日快乐！</p>
 						<h5>3.12新增功能:</h5>
 						<p>1.“问问狗蛙”AI功能优化</p>
 						<p>2.重构且优化网站视图，使其更新至bootstrap5</p>
