@@ -9,6 +9,7 @@
 		<title>狗蛙世界</title>
 	</head>
 	<script>
+		alert("生日快乐皮皮！");
 		touchtimes = 0;
 		isEatBread = false;
 		text = "";
@@ -40,7 +41,7 @@
 				document.getElementById("firstgw").src = "./gw/girl.png";
 			} else if (x.value == '皮皮') {
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-success">祝皮皮生日快乐！</div>';
-				document.getElementById("firstgw").src = "./gw/IMG_3848.PNG";
+				document.getElementById("firstgw").src = "./gw/happy.png";
 			} else if (x.value == 'dhx and zyd' || x.value == 'zyd and dhx') {
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-danger">你在想什么？？？</div>';
 				document.getElementById("firstgw").src = "./gw/angry.png";
@@ -48,7 +49,7 @@
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-warning">你说什么？</div>';
 			} else {
 				text = x.value;
-				text = text.replace("？", "。").replace("吗", "").replace("你", "我").replace("什么", "好吃的").replace("怎么样","很好");
+				text = text.replace("？", "。").replace("吗", "").replace("你", "我").replace("什么", "好吃的").replace("怎么样","很好").replace("我","你");
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-info">' + text + '</div>';
 			}
 		}
@@ -57,7 +58,7 @@
 	<body>
 		<div id="welcome">
 			<h1 id="title1">狗蛙世界</h1>
-			<p id="designer">dinghx制作该网站</p>
+			<p id="designer">dhx制作该网站</p>
 			<h2>皮皮生日快乐</h2>
 			<a id="visitgithub" href="https://github.com/CodingDing123/gouwa.github.io">访问GitHub页</a>
 			<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#notice">
