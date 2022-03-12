@@ -13,3 +13,11 @@ body {
 #visitgithub {
 	text-align: right;
 }
+
+#welcome {
+	background-color: #f5bb88;
+}
+
+#trytoask {
+	background-color: gray;
+}
