@@ -2,158 +2,172 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="indexpage.css">
 		<title>狗蛙世界</title>
 	</head>
 	<script>
-	touchtimes = 0;
-	isEatBread = false;
-	text = "";
-	setInterval(function(){document.getElementById("firstgw").src="./gw/original.png";},5000);
-	setInterval(function(){document.getElementById("bread").src="./gw/bread.png";isEatBread=false;touchtimes=0},10000);
-	function addtimes() {
-		touchtimes += 1;
-		if(touchtimes > 3 && !isEatBread) {
-			document.getElementById("firstgw").src="./gw/angry.png";
-			touchtimes = 0;
+		touchtimes = 0;
+		isEatBread = false;
+		text = "";
+		setInterval(function() {
+			document.getElementById("firstgw").src = "./gw/original.png";
+		}, 5000);
+		setInterval(function() {
+			document.getElementById("bread").src = "./gw/bread.png";
+			isEatBread = false;
+			touchtimes = 0
+		}, 10000);
+
+		function addtimes() {
+			touchtimes += 1;
+			if (touchtimes > 3 && !isEatBread) {
+				document.getElementById("firstgw").src = "./gw/angry.png";
+				touchtimes = 0;
+			}
 		}
-	}
-	function eatbread() {
-		isEatBread = true;
-		document.getElementById("bread").src="./gw/404.png";
-	}
-	function getcontent() {
-		if (x.value == 'zcz and lcx' || x.value == 'lcx and zcz') {
-			document.getElementById("answerplace").innerHTML='<div class="alert alert-success">新婚快乐！！！</div>';
-			document.getElementById("firstgw").src="./gw/girl.png";
-		} else if (x.value == 'dhx and zyd' || x.value == 'zyd and dhx') {
-			document.getElementById("answerplace").innerHTML='<div class="alert alert-danger">你在想什么？？？</div>';
-			document.getElementById("firstgw").src="./gw/angry.png";
-		} else if (x.value == '') {
-			document.getElementById("answerplace").innerHTML='<div class="alert alert-warning">你说什么？</div>';
-		} else {
-			text = x.value;
-			text = text.replace("？","。").replace("吗","").replace("你","我").replace("什么","好吃的");
-			document.getElementById("answerplace").innerHTML='<div class="alert alert-info">'+text+'</div>';
+
+		function eatbread() {
+			isEatBread = true;
+			document.getElementById("bread").src = "./gw/404.png";
 		}
-	}
+
+		function getcontent() {
+			if (x.value == 'zcz and lcx' || x.value == 'lcx and zcz') {
+				document.getElementById("answerplace").innerHTML = '<div class="alert alert-success">新婚快乐！！！</div>';
+				document.getElementById("firstgw").src = "./gw/girl.png";
+			} else if (x.value == 'dhx and zyd' || x.value == 'zyd and dhx') {
+				document.getElementById("answerplace").innerHTML = '<div class="alert alert-danger">你在想什么？？？</div>';
+				document.getElementById("firstgw").src = "./gw/angry.png";
+			} else if (x.value == '') {
+				document.getElementById("answerplace").innerHTML = '<div class="alert alert-warning">你说什么？</div>';
+			} else {
+				text = x.value;
+				text = text.replace("？", "。").replace("吗", "").replace("你", "我").replace("什么", "好吃的").replace("怎么样","很好");
+				document.getElementById("answerplace").innerHTML = '<div class="alert alert-info">' + text + '</div>';
+			}
+		}
 	</script>
+
 	<body>
-		<h1 id="title1">狗蛙世界</h1>
-		<p id="designer">dinghx制作该网站</p>
-		<a id="visitgithub" href="https://github.com/CodingDing123/gouwa.github.io/tree/master">访问GitHub页</a>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#notice">
-			公告
-		</button>
+		<div id="welcome">
+			<h1 id="title1">狗蛙世界</h1>
+			<p id="designer">dinghx制作该网站</p>
+			<a id="visitgithub" href="https://github.com/CodingDing123/gouwa.github.io/tree/master">访问GitHub页</a>
+			<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#notice">
+				公告
+			</button>
+			<br>
+			<a href="history.html">历史更新记录</a>
+		</div>
 		<br>
 		<img id="bread" src="./gw/bread.png" alt="面包吃完了。。。" onclick="eatbread()">
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-			面包是干什么的？
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#whatisbread">
+			面包有什么用？
 		</button>
 		<br>
 		<img id="firstgw" src="./gw/original.png" alt="狗蛙走丢了。。。" onclick="addtimes()">
 		<br>
 		<h3>摸摸它</h3>
 
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							&times;
-						</button>
-						<h4 class="modal-title" id="myModalLabel">
-							狗勾面包
-						</h4>
-					</div>
-					<div class="modal-body">
-						吃下面包后，可以在下次刷新出来前安抚任何犬类，每十秒刷新一次。
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							明白了
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		
 		<div style="padding: 100px 100px 10px;">
 			<form class="bs-example bs-example-form" role="form">
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="input-group">
 							<span class="input-group-btn">
-								<button class="btn btn-default" type="button" onclick="getcontent()">
+								<button type="button" class="btn btn-success" onclick="getcontent()">
 									问问狗蛙
 								</button>
 							</span>
-							<input type="text" class="form-control" id="input1"><script>var x=  document.getElementById("input1");</script>
+							<input type="text" class="form-control" id="input1">
+							<script>
+								var x = document.getElementById("input1");
+							</script>
 						</div><!-- /input-group -->
 					</div><!-- /.col-lg-6 -->
 				</div><!-- /.row -->
 			</form>
 		</div>
-		
+
 		<div id="answerplace">
-		
+
+		</div>
+
+		<div class="container mt-3">
+			<a href="#questiongrammar" class="btn btn-primary" data-bs-toggle="collapse">提问规范</a>
+			<div id="questiongrammar" class="collapse">
+				提问必须是问句<br>
+				提问以“吗”结尾<br>
+				提问中允许出现“什么”疑问词<br>
+				彩蛋除外，彩蛋识别等级高于问句识别等级<br>
+			</div>
 		</div>
 		
-		<div class="panel-group" id="accordion">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" 
-						   href="#collapseOne">
-							提问规范
-						</a>
-					</h4>
-				</div>
-				<div id="collapseOne" class="panel-collapse collapse in">
-					<div class="panel-body">
-						提问必须是问句<br>
-						提问以“吗”结尾<br>
-						提问中允许出现“什么”疑问词<br>
-						彩蛋除外，彩蛋识别等级高于问句识别等级<br>
-					</div>
-				</div>
-			</div>
-		
-		<div class="modal fade" id="notice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div id="trytoask">
+			<h2>试着问问:</h2>
+			<p>狗蛙你喜欢吃什么？</p>
+			<p>狗蛙今天天气怎么样？</p>
+		</div>
+
+		<!-- 公告模态框 -->
+		<div class="modal fade" id="notice">
 			<div class="modal-dialog">
 				<div class="modal-content">
+
+					<!-- 模态框头部 -->
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							&times;
-						</button>
-						<h4 class="modal-title" id="myModalLabel">
-							3.11提交:
-						</h4>
+						<h4 class="modal-title">最近提交3.12日</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 					</div>
+
+					<!-- 模态框内容 -->
 					<div class="modal-body">
-						<h5>3.10新增功能:</h5>
-						<p>1.“问问狗蛙”功能的答复不再展示在隐藏标题里面</p>
-						<p>2.添加bootstrap警告框来显示狗蛙的回复</p>
-						<p>3.添加狗蛙在无定义情况的默认回答</p>
-						<h5>3.10修复bug</h5>
-						<p>1.修复了狗蛙覆盖回答的问题</p>
-						<h5>3.11新增功能:</h5>
-						<p>1.“问问狗蛙”加入AI功能，可对满足规范的问题进行回答</p>
-						<p>2.“问问狗蛙”的菜单可以改变狗蛙的形态</p>
+						<h5>3.12新增功能:</h5>
+						<p>1.“问问狗蛙”AI功能优化</p>
+						<p>2.重构且优化网站视图，使其更新至bootstrap5</p>
+						<p>3.增加“试着问问”，引导用户正确提问</p>
+						<p>4.优化网站中文字表述</p>
+						<p>5.增加“历史更新记录”页面</p>
 						<h5>已知bug:</h5>
 						<p>1.输入内容后回车会刷新</p>
 					</div>
+
+					<!-- 模态框底部 -->
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							了解
-						</button>
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
 					</div>
+
 				</div>
 			</div>
 		</div>
-		
+
+		<!-- 狗勾面包模态框 -->
+		<div class="modal fade" id="whatisbread">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+
+					<!-- 模态框头部 -->
+					<div class="modal-header">
+						<h4 class="modal-title">狗勾面包</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+					</div>
+
+					<!-- 模态框内容 -->
+					<div class="modal-body">
+						点击吃下面包后，可在下次刷新狗勾面包前抚摸任何犬类，每十秒刷新一次。
+					</div>
+
+					<!-- 模态框底部 -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
 	</body>
 </html>
