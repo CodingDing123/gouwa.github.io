@@ -46,6 +46,9 @@
 			if (x.value == '叫醒狗蛙') {
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-info">狗蛙醒来啦</div>';
 				isSleep = false;
+			} else if (x.value == '晚安狗蛙') {
+				document.getElementById("answerplace").innerHTML = '<div class="alert alert-info">狗蛙睡觉啦</div>';
+				isSleep = true;
 			} else if (isSleep) {
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-info">狗蛙在睡觉zzz</div>';
 			}  else if (x.value == 'zcz and lcx' || x.value == 'lcx and zcz') {
