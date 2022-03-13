@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="indexpage.css">
@@ -12,6 +12,13 @@
 		touchtimes = 0;
 		isEatBread = false;
 		text = "";
+		isSleep = false;
+		var hour = new Date;
+		var h = hour.getHours();
+		if (h > 20 || h < 10) {
+			isSleep = true;
+		}
+		
 		setInterval(function() {
 			document.getElementById("firstgw").src = "./gw/original.png";
 		}, 5000);
@@ -35,7 +42,12 @@
 		}
 
 		function getcontent() {
-			if (x.value == 'zcz and lcx' || x.value == 'lcx and zcz') {
+			if (isSleep) {
+				document.getElementById("answerplace").innerHTML = '<div class="alert alert-info">狗蛙在睡觉zzz</div>';
+			} else if (x.value == '叫醒狗蛙') {
+				document.getElementById("answerplace").innerHTML = '<div class="alert alert-info">狗蛙醒来啦</div>';
+				isSleep = false;
+			} else if (x.value == 'zcz and lcx' || x.value == 'lcx and zcz') {
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-success">新婚快乐！！！</div>';
 				document.getElementById("firstgw").src = "./gw/girl.png";
 			} else if (x.value == '皮皮') {
@@ -76,6 +88,7 @@
 		<img id="firstgw" src="./gw/original.png" alt="狗蛙走丢了。。。" onclick="addtimes()">
 		<br>
 		<h3>摸摸它</h3>
+		<p>狗蛙睡着了就说“叫醒狗蛙”</p>
 
 		<div style="padding: 100px 100px 10px;">
 			<form class="bs-example bs-example-form" role="form">
@@ -125,23 +138,18 @@
 
 					<!-- 模态框头部 -->
 					<div class="modal-header">
-						<h4 class="modal-title">最近提交3.12日</h4>
+						<h4 class="modal-title">最近提交3.13日</h4>
 						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 					</div>
 
 					<!-- 模态框内容 -->
 					<div class="modal-body">
-						<h5>3.12特别更新</h5>
-						<p>皮皮生日快乐！</p>
-						<h5>3.12新增功能:</h5>
-						<p>1.“问问狗蛙”AI功能优化</p>
-						<p>2.重构且优化网站视图，使其更新至bootstrap5</p>
-						<p>3.增加“试着问问”，引导用户正确提问</p>
-						<p>4.优化网站中文字表述</p>
-						<p>5.增加“历史更新记录”页面</p>
+						<h5>3.13新增功能:</h5>
+						<p>1.狗蛙会睡觉了</p>
+						<h5>3.13修复bug:</h5>
+						<p>1.手机端浏览器访问页面布局错乱,初步实现响应式网页</p>
 						<h5>已知bug:</h5>
 						<p>1.输入内容后回车会刷新</p>
-						<p>2.手机端浏览器访问页面布局错乱</p>
 					</div>
 
 					<!-- 模态框底部 -->
