@@ -2,6 +2,12 @@ body {
 	background-color: wheat;
 }
 
+#welcome {
+	background-color: #f5bb88;
+	width: 80%;
+	margin: 0 auto;
+}
+
 #title1 {
 	text-align: center;
 }
@@ -14,8 +20,14 @@ body {
 	text-align: right;
 }
 
-#welcome {
-	background-color: #f5bb88;
+#gouwa {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#bread {
+	width: 80%;
+	margin: 0 auto;
 }
 
 #trytoask {

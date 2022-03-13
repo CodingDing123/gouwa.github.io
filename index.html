@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="indexpage.css">
@@ -18,7 +19,7 @@
 		if (h > 20 || h < 10) {
 			isSleep = true;
 		}
-		
+
 		setInterval(function() {
 			document.getElementById("firstgw").src = "./gw/original.png";
 		}, 5000);
@@ -60,7 +61,8 @@
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-warning">你说什么？</div>';
 			} else {
 				text = x.value;
-				text = text.replace("？", "。").replace("吗", "").replace("你", "我").replace("什么", "好吃的").replace("怎么样","很好").replace("我","你");
+				text = text.replace("？", "。").replace("吗", "").replace("你", "我").replace("什么", "好吃的").replace("怎么样", "很好")
+					.replace("我", "你");
 				document.getElementById("answerplace").innerHTML = '<div class="alert alert-info">' + text + '</div>';
 			}
 		}
@@ -80,12 +82,16 @@
 			<a href="history.html">历史更新记录</a>
 		</div>
 		<br>
-		<img id="bread" src="./gw/bread.png" alt="面包吃完了。。。" onclick="eatbread()">
+		<div id="bread">
+			<img id="bread" src="./gw/bread.png" alt="面包吃完了。。。" onclick="eatbread()">
+		</div>
 		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#whatisbread">
 			面包有什么用？
 		</button>
 		<br>
-		<img id="firstgw" src="./gw/original.png" alt="狗蛙走丢了。。。" onclick="addtimes()">
+		<div id="gouwa">
+			<img id="firstgw" src="./gw/original.png" alt="狗蛙走丢了。。。" onclick="addtimes()">
+		</div>
 		<br>
 		<h3>摸摸它</h3>
 		<p>狗蛙睡着了就说“叫醒狗蛙”</p>
@@ -123,7 +129,7 @@
 				彩蛋除外，彩蛋识别等级高于问句识别等级<br>
 			</div>
 		</div>
-		
+
 		<div id="trytoask">
 			<h2>试着问问:</h2>
 			<p>皮皮</p>
